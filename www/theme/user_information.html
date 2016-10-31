@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User information</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/user_inf.css">
+</head>
+<body>
+<header class="container-fluid">
+</header>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php"><span class="text-center"></span> Site</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="user_information.php">Персональная информация</a></li>
+                <li><a href="logout.php">Выйти</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<main class="container">
+    <section class="row">
+        <div class="col-md-6">
+            <img src="lib/image/student.png" class="center-block img-responsive">
+        </div>
+        <div class="col-md-6 well">
+            <h3 class="text-left" id="name"> Приветствую, {{user}}</h3>
+            <pre class="text-left"> Имя: {{name}} </pre>
+            <pre class="text-left"> Образование: {{education}} </pre>
+            <pre class="text-left"> Адрес: {{address}}</pre>
+            <pre class="text-left"> Телефон:{{phone}} </pre>
+            <button class="btn btn-success edit" type="button" data-toggle="modal" data-target="#myModal" id="go">Редактировать</button>
+        </div>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                        <h4 class="modal-title">Редактировать данные</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <form  method="post" class="form-signin form-group" action="user_information.php"  id="formx">
+                            <div class="form-group">
+                                <input type="text"  name="name" placeholder="Имя" value="{{name}}" class="form-input input-block-level"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="education" placeholder="Образование" value="{{education}}" class="form-input input-block-level" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="address" placeholder="Адрес" value="{{address}}" class="form-input input-block-level"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" placeholder="Телефон" value="{{phone}}" class="form-input input-block-level"/>
+                            </div>
+                            <div class="submit">
+                                <button  class="btn btn-success" type="submit" name="edit" id="edit">Редактировать</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer navbar-fixed-bottom">
+    <div class="container">
+        <p class="text-left"> © 2016 Jane</p>
+    </div>
+</footer>
+
+<script src="lib/js/jquery/dist/jquery.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/ajax_go_edit.js"></script>
+
+</body>
+</html>

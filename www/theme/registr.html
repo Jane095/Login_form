@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/style.css">
+</head>
+<body>
+<header class="container-fluid">
+</header>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php"><span class="text-center"></span> Site</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.php">Войти</a></li>
+                <li><a href="registr.php">Регистрация</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container registr">
+    <form class="form-signin" method="post" action="" id="js-register-form" >
+        <div class="message js-form-message"></div>
+        <div class="form-group">
+            <h4 class="form-signin-heading">Пожалуйста, введите данные</h4>
+            <div class="form-group">
+                <input type="text" class="form-input input-block-level" placeholder="Логин" name="form_name" required>
+                <p class="error" id="result">{{name_exist}}</p>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-input input-block-level" placeholder="Почта" name="form_email" required>
+                <p class="error">{{email_err}}{{email_exist}}</p>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input input-block-level" placeholder="Пароль" name="form_pswd1" id="form_pswd1" required>
+                <span class="error">{{pasw_err}}</span>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input input-block-level" placeholder="Подтвердите пароль" name="form_pswd2" required>
+                <p class="error">{{pasw_err}}{{pasw_err_match}}</p>
+            </div>
+            <button class="btn btn-large btn-danger" type="submit" name="create_user">Зарегистрироваться</button>
+            <a href="index.php">Войти</a>
+        </div>
+    </form>
+</div>
+
+<footer class="footer navbar-fixed-bottom">
+    <div class="container">
+        <p class="text-left"> © 2016 Jane</p>
+    </div>
+</footer>
+
+
+<script src="lib/js/jquery/dist/jquery.min.js"></script>
+<script src="lib/js/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="lib/js/custom.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+
+</body>
+</html>
